@@ -1,0 +1,108 @@
+.feedback-form{
+  background-color: #EBEBDF;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form-content {
+      margin: 100px 0;
+      max-width: 700px;
+      border: 2px solid rgba(168, 167, 167, 0.61);
+      border-radius: 10px;
+      padding: 50px;
+      background-color: #EBEBDF;
+      .form-title {
+        color: #39393A;
+        font-family: Roboto,sans-serif;
+        text-align: center;
+        font-size: 35px;
+        margin-top: 50px;
+      }
+      .form-text {
+        font-family: Roboto, sans-serif;
+        color: #a8a7a7;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .form-details {
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 600px;
+        box-sizing: border-box;
+        .form-group {
+          display: flex;
+          align-items: center;
+          border: 2px solid rgba(168, 167, 167, 0.61);
+          border-radius: 10px;
+          padding: 10px;
+          margin-top: 15px;
+          margin-bottom: 5px;
+          .icons {
+            width: 50px;
+            height: 50px;
+            background-color: #EB631B;
+            border-radius: 50%;
+            padding: 3px;
+            margin-right: 10px;
+            .icon-element {
+              width: 30px;
+              height: 35px;
+              margin-top: 7px;
+              path {
+                fill: #EBEBDF;
+              }
+            }
+          }
+          .form-input {
+            background-color: transparent;
+            border: none;
+            width: 80%;
+            padding: 10px;
+            font-size: 18px;
+            font-family: Roboto,sans-serif;
+            color: #39393A;
+          }
+          .form-input:focus {
+            outline: none;
+          }
+        }
+        .form-group.error {
+          border: 2px solid red;
+        }
+        .error {
+          display: none;
+          color: red;
+          font-size: 16px;
+          font-family: Roboto,sans-serif;
+        }
+        .message-group {
+          margin-bottom: 5px;
+          .text-input {
+            width: 95%;
+            resize: none;
+          }
+        }
+      }
+      .form-btn {
+        margin-top: 30px;
+        //margin: 0 auto;
+        text-align: center;
+        .btn {
+          width: 300px;
+          padding: 20px;
+          border-radius: 10px;
+          background-color: #EB631B;
+          color: #EBEBDF;
+          font-family: Roboto,sans-serif;
+          font-size: 18px;
+          border: 2px solid rgba(168, 167, 167, 0.61);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
