@@ -16,7 +16,7 @@
                     <input type="text" class="form-input" id="name" placeholder="Ваше имя">
                     <label for="name"></label>
                 </div>
-                <span class="error">Введите Ваше имя</span>
+                <span class="error" id="nameInput-error">Введите Ваше имя (например, Иван)</span>
                 <div class="form-group">
                     <div class="icons">
                         <svg class="icon-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -27,7 +27,7 @@
                     <input type="email" class="form-input" id="email" placeholder="Введите email">
                     <label for="email"></label>
                 </div>
-                <span class="error">Введите email</span>
+                <span class="error" id="emailInput-error">Введите email (например, example@example.com)</span>
                 <div class="form-group">
                     <div class="icons">
                         <svg class="icon-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -38,17 +38,29 @@
                     <input type="tel" class="form-input" id="phone" placeholder="Введите телефон">
                     <label for="phone"></label>
                 </div>
-                <span class="error">Введите телефон</span>
+                <span class="error" id="phoneInput-error">Введите телефон</span>
                 <div class="form-group message-group">
                     <textarea class="form-input text-input" id="text" placeholder="Сообщение"></textarea>
 <!--                    <label for="text"></label>-->
                 </div>
-                <span class="error">Введите сообщение</span>
+                <span class="error" id="textInput-error">Введите сообщение</span>
             </form>
             <div class="form-btn">
-                <button class="btn">Отправить</button>
+                <button class="btn" id="process-btn">Отправить</button>
+            </div>
+            <div class="form-btn modal-btn">
+                <button class="btn" id="popup-btn">Модальное окно</button>
             </div>
         </div>
 
     </div>
 </section>
+
+<div class="popup" id="popup">
+    <h4>Спасибо за заявку</h4>
+    <div class="popup-text">
+        Ссылка для подтверждения была отправлена на ваш адрес электронной почты. Пожалуйста, нажмите на ссылку, которую мы отправили, чтобы подтвердить ваш
+        электронный адрес.
+    </div>
+    <button class="btn popup-btn" id="popup-btn-ok">OK</button>
+</div>

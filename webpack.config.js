@@ -8,14 +8,13 @@ module.exports = {
     output: {
         filename: 'app.js',
         path: path.resolve(__dirname, 'dist'),
-        // publicPath: '/'
     },
     devServer: {
         static: {
             directory: path.join(__dirname, 'public'),
         },
         compress: true,
-        port: 9090,
+        port: 9000,
         historyApiFallback: true,
     },
     module: {
@@ -39,6 +38,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {from: "./src/templates", to: "templates"},
+                {from: "./node_modules/inputmask/dist/inputmask.min.js", to: "js"},
             ]
         })
     ]

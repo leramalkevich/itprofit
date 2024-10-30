@@ -68,7 +68,7 @@
             outline: none;
           }
         }
-        .form-group.error {
+        .form-group.is-invalid {
           border: 2px solid red;
         }
         .error {
@@ -105,4 +105,35 @@
   }
 }
 
-
+.popup {
+  display: none;
+  position: fixed;
+  background-color: rgba(96, 94, 94, 0.8);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  z-index: 999;
+  text-align: center;
+  padding-top: 250px;
+  h4 {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .popup-text {
+    font-size: 18px;
+  }
+  .btn.popup-btn {
+    width: 150px;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #EB631B;
+    color: #EBEBDF;
+    font-family: Roboto,sans-serif;
+    font-size: 18px;
+    border: 2px solid rgba(168, 167, 167, 0.61);
+    cursor: pointer;
+  }
+}

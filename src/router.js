@@ -4,7 +4,6 @@ export class Router {
     constructor() {
         this.titlePageElement = document.getElementById('title-page');
         this.contentPageElement = document.getElementById('content');
-        this.viewportElement = document.getElementById('viewport');
 
         this.initEvents();
         this.routes = [
@@ -14,7 +13,8 @@ export class Router {
                 filePathTemplate: '/templates/feedback.html',
                 load: () => {
                     new Feedback(this.openNewRoute.bind(this));
-                }
+                },
+                scripts: ['inputmask.min.js']
             },
             {
               route: '/404',
@@ -26,9 +26,6 @@ export class Router {
 
     initEvents() {
         window.addEventListener('DOMContentLoaded', this.activateRoute.bind(this));
-        // вызываем функцию когда поменялся URL (то есть отлавливаем изменения)
-        // window.addEventListener('popstate', this.activateRoute.bind(this));
-        // document.addEventListener('click', this.clickHandler.bind(this));
     }
 
     async openNewRoute(url) {
@@ -40,9 +37,9 @@ export class Router {
     async activateRoute(e, oldRoute = null) {
         if (oldRoute) {
             const currentRoute = this.routes.find(item => item.route === oldRoute);
-            if (currentRoute.styles && currentRoute.styles.length > 0) {
-                currentRoute.styles.forEach(style => {
-                    document.querySelector(`link[href='/css/${style}']`).remove();
+            if (currentRoute.scripts && currentRoute.scripts.length > 0) {
+                currentRoute.scripts.forEach(script => {
+                    document.querySelector(`script[src='/js/${script}']`).remove();
                 })
             }
 
@@ -54,13 +51,12 @@ export class Router {
         const newRoute = this.routes.find(item => item.route === urlRoute);
 
         if (newRoute) {
-            if (newRoute.styles && newRoute.styles.length > 0) {
-                newRoute.styles.forEach(style => {
-                    const link = document.createElement('link');
-                    link.rel = 'stylesheet';
-                    link.href = '/css/' + style;
-                    document.head.insertBefore(link, this.viewportElement);
-                })
+            if (newRoute.scripts && newRoute.scripts.length > 0) {
+                for (const script of newRoute.scripts) {
+                    const scriptBlock = document.createElement('script');
+                    scriptBlock.src = '/js/' + script;
+                    document.body.appendChild(scriptBlock);
+                }
             }
 
             if (newRoute.title) {
